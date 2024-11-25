@@ -1,4 +1,4 @@
-//? elements================================================
+//? elements==================================================
 let questionAnswered = 0;
 let score = 0;
 let progress = 0;
@@ -10,7 +10,7 @@ const ansElemSet = Array.from(answerSec.children);
 const resetBtn = document.getElementById("resetBtn");
 const nextBtn = document.getElementById("nextBtn");
 
-// ? QuestionSet============================================
+// ? QuestionSet===============================================
 const questionSet = [
   {
     ques: "What will be the result of NaN !== NaN - 1 ?",
@@ -31,11 +31,13 @@ const questionSet = [
     },
   },
 ];
-
+//selecting an answer============================================
 answerSec.addEventListener("click", (event) => {
   event.stopPropagation();
+  //enabling next button===============================
   nextBtn.setAttribute("aria-disabled", "false");
   nextBtn.classList.remove("disabled");
+  //actions if selected answer is correct or incorrect
   if (event.target.getAttribute("correctAnswer") === "true") {
     score += 20;
     event.target.classList.add("bg-success", "text-white");
@@ -53,31 +55,45 @@ answerSec.addEventListener("click", (event) => {
   }
 });
 
+//switching to next question====================================
 nextBtn.addEventListener("click", (event) => {
+  //re-disabling nextBtn=======================
+  nextBtn.classList.add("disabled");
+  nextBtn.setAttribute("aria-disabled", "true");
   event.stopPropagation();
+  //updating progressbar=======================
   progress += 20;
   progressLength.style.width = `${progress}%`;
   progressLength.innerText = `${progress}%`;
-  answerSec.classList.add('flipOut');
+  //aplying flip animation=====================
+  answerSec.classList.add("flipOut");
   setTimeout(() => {
-    answerSec.classList.remove('flipOut');
+    answerSec.classList.remove("flipOut");
   }, 600);
   //resetting the state============================
   Array.from(answerSec.children).forEach((elem) =>
-    elem.classList.remove("disableArea", 'bg-danger', 'bg-success', 'text-white')
+    elem.classList.remove(
+      "disableArea",
+      "bg-danger",
+      "bg-success",
+      "text-white"
+    )
   );
+  //updating DOMs with next question and options
   question.innerText = questionSet[questionAnswered].ques;
   let i = 0;
-  for(let option in questionSet[questionAnswered].opt) {
-    ansElemSet[i].firstElementChild.innerText = questionSet[questionAnswered].opt[option];
-    if(option === 'true') ansElemSet[i].setAttribute('correctAnswer', 'true');
-    else ansElemSet[i].setAttribute('correctAnswer', 'false');
+  for (let option in questionSet[questionAnswered].opt) {
+    ansElemSet[i].firstElementChild.innerText =
+      questionSet[questionAnswered].opt[option];
+    if (option === "true") ansElemSet[i].setAttribute("correctAnswer", "true");
+    else ansElemSet[i].setAttribute("correctAnswer", "false");
     i++;
   }
   questionAnswered++;
 });
 
-resetBtn.addEventListener('click', event => {
-    event.stopPropagation();
-    window.location.reload();
-})
+//resetting the quiz============================================
+resetBtn.addEventListener("click", (event) => {
+  event.stopPropagation();
+  window.location.reload();
+});
