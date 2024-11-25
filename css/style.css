@@ -1,20 +1,56 @@
 * {
-margin: 0;
-padding: 0;
-box-sizing: border-box;
-outline: none;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
 }
 body {
-font-family: var(--fnt_primary);
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  color: rgb(59, 59, 59);
+  background-image: linear-gradient(45deg, blue, purple);
 }
-ol, ul, li {
-list-style: none;
+ol,
+ul,
+li {
+  list-style: none;
 }
-a, span {
-text-decoration: none;
-display: inline-block;
+a,
+span {
+  text-decoration: none;
+  display: inline-block;
 }
 img {
-vertical-align: middle;
+  vertical-align: middle;
+}
+.pointer {
+    cursor: pointer;
 }
 
+/* ?==========canvas===========? */
+.mainWrapper {
+  width: 100%;
+  height: 100dvh;
+}
+.canvas {
+  width: 500px;
+  height: 600px;
+  border-radius: 15px;
+  background-color: whitesmoke;
+  padding: 2rem;
+}
+.progressBarSec {
+    border: 2px solid blue;
+    border-radius: 10px;
+}
+.answerSecItem {
+    border: 2px solid rgba(0, 0, 255, 0.205);
+    border-radius: 10px;
+    transition: 0.3s ease-in-out;
+}
+.answerSecItem:hover {
+    background-color: blue;
+    color: whitesmoke;
+}
+.nextBtn {
+    width: 80px;
+}

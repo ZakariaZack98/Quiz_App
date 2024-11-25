@@ -15,7 +15,39 @@
     <title>Document</title>
 </head>
 <body>
-    
+    <section class="mainWrapper d-flex justify-content-center align-items-center" id="mainWrapper">
+        <section class="canvas d-flex flex-column justify-content-between align-items-center" id="canvas">
+            <div class="progressBarSec w-100" id="progressBarSec">
+                <div class="progress" role="progressbar" aria-label="Example with label" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
+                    <div class="progress-bar" style="width: 0%">0%</div>
+                </div>
+            </div>
+            <div class="mainHeader text-center my-2">
+                <h1>Take a Quiz</h1>
+            </div>
+            <div class="question px-3 text-start">
+                <h5>What will be the result of 1 + 2 + "a" - 3?</h5>
+            </div>
+            <div class="answerSec d-flex flex-column gap-3 p-3 w-100">
+                <div class="answerSecItem d-flex justify-content-start align-items-center p-2 shadow-lg pointer">
+                    <p class="m-0 p-0" correctAnswer="false">A. 3a-3</p>
+                </div>
+                <div class="answerSecItem d-flex justify-content-start align-items-center p-2 shadow-lg pointer">
+                    <p class="m-0 p-0" correctAnswer="true">B. NaN</p>
+                </div>
+                <div class="answerSecItem d-flex justify-content-start align-items-center p-2 shadow-lg pointer">
+                    <p class="m-0 p-0" correctAnswer="false">C. 12a3</p>
+                </div>
+                <div class="answerSecItem d-flex justify-content-start align-items-center p-2 shadow-lg pointer">
+                    <p class="m-0 p-0" correctAnswer="false">D. undefined</p>
+                </div>
+            </div>
+            <div class="btnSec d-flex justify-content-center align-items-center gap-4">
+                <button class="resetBtn btn btn-danger">Restart</button>
+                <button class="nextBtn btn btn-primary disabled" area-disabled = "true">Next</button>
+            </div>
+        </section>
+    </section>
 </body>
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 <script>AOS.init();</script>
