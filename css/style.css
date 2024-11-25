@@ -1,0 +1,20 @@
+* {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+outline: none;
+}
+body {
+font-family: var(--fnt_primary);
+}
+ol, ul, li {
+list-style: none;
+}
+a, span {
+text-decoration: none;
+display: inline-block;
+}
+img {
+vertical-align: middle;
+}
+
