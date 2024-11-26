@@ -68,3 +68,16 @@ img {
 .nextBtn {
   width: 80px;
 }
+
+.successPage {
+  height: 300px;
+  width: 75%;
+  border-radius: 15px;
+  background-color: rgba(0, 0, 255, 0.788);
+  color: whitesmoke;
+  transition: 0.6 ease-in-out;
+}
+.finalScore {
+  font-weight: 800;
+  font-size: 60px;
+}
