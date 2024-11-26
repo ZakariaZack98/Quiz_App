@@ -27,7 +27,12 @@ img {
 }
 .disableArea {
   pointer-events: none !important;
-  cursor: not-allowed !important;
+}
+.cursorDisable {
+  cursor: not-allowed;
+}
+.no-events {
+  pointer-events: none;
 }
 .flipOut {
     transform: rotateY(90deg);
@@ -68,13 +73,17 @@ img {
 .nextBtn {
   width: 80px;
 }
-
 .successPage {
   height: 300px;
   width: 75%;
   border-radius: 15px;
   background-color: rgba(0, 0, 255, 0.788);
   color: whitesmoke;
+  transition: 0.6 ease-in-out;
+}
+.popUp {
+  scale: 0.7;
+  opacity: 0;
   transition: 0.6 ease-in-out;
 }
 .finalScore {
